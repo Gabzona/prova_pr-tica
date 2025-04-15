@@ -56,7 +56,7 @@ class Nave extends Entidade{
 
     }
     atirar(){
-        
+
     }
     atualizar(){}
     verificaColisao(){
@@ -71,6 +71,15 @@ class Nave extends Entidade{
             ctx.fillText('GAME OVER', 50, 100);
             Jogo.gameOver = true;
         }
+    }
+    desenhar(){
+        ctx.drawImage(
+            this.imagem,
+            this.x,
+            this.y,
+            this.largura,
+            this.altura,
+        )
     }
 }
 
