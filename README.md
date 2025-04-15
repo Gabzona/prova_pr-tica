@@ -1,1 +1,9 @@
-# prova_pr-tica
+<h1 align="center"> Instruções para o jogo SPACE INVADERS </h1>
+<h2 align="center"> O objetivo do jogo é destruir os aliens. Para fazer isso, se mova pela tela e atire um projétil.</h2>
+<h3 align="center"> Você irá controlar a nave localizada na parte de baixo da tela.</h3>
+<h3 align="center"> Para mover a nave para a esquerda, pressione a tecla "A".</h3>
+<h3 align="center"> Para mover a nave para a esquerda, pressione a tecla "D".</h3>
+<h3 align="center"> Para atirar um projétil, pressione o "espaço".</h3>
+<h2 align="center">REGRAS</h2>
+<h3 align="center"> Se um alien tocar o personagem, é Game Over.</h3>
+<h3 align="center"> Se um alien tocar o chão, é Game Over.</h3>
