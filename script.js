@@ -56,9 +56,13 @@ class Nave extends Entidade{
 
     }
     atirar(){
-
+        //chamar o piu
     }
-    atualizar(){}
+    atualizar(){
+        this.x += this.#velocidade_x
+        if(this.andando){
+        }
+    }
     verificaColisao(){
         if (
             alens.y > personagi.y + personagi.altura &&
@@ -126,6 +130,11 @@ class Jogo{
     static gameOver = false
     constructor(){
         this.loop = this.loop.bind(this)
+    }
+    atualizarPontuacao() {
+        ctx.fillStyle = "white";
+        ctx.font = "20px Arial";
+        ctx.fillText(`Pontuação: ${Jogo.pontuacao}`, 10, 30); // Exibe pontuação na tela
     }
     loop () {
         if(Jogo.gameOver == false){
