@@ -1,12 +1,12 @@
 const canvas = document.getElementById('JogoCanvas');
 const ctx = canvas.getContext('2d');
 
-document.addEventListener('keydown', (e) => { //função de pular ao pressionar tecla A
+document.addEventListener('keydown', (e) => { //função de andar ao pressionar tecla A
     if(e.code=='A'){
         personagi.andar_esquerda()
     }
 })
-document.addEventListener('keydown', (e) => { //função de pular ao pressionar tecla D
+document.addEventListener('keydown', (e) => { //função de andar ao pressionar tecla D
     if(e.code=='D'){
         personagi.andar_direita()
     }
@@ -34,9 +34,30 @@ class Entidade{
 }
 
 class Nave extends Entidade{
+    #velocidade_x //encapsulando pra não mudar a velocidade da nave
+    constructor(x, y, largura, altura, cor){
+        super(x, y, largura, altura, cor)
+        this.andando = false //o personagem está parado
+        this.imagem = new Image()
+        this.imagem.src = '../' //adicionar imagem depois
+        this.#velocidade_x = 3
+    }
+    andar_esquerda(){
+        andando = true
+        this.x -= 3
+    }
+    andar_direita(){
+        andando = true
+    }
+    atirar(){}
+    atualizar(){
+        if(andando == true){}
+    }
 }
 
-class Alien extends Entidade{}
+class Alien extends Entidade{
+    
+}
 
 class Tiro extends Entidade{}
 
