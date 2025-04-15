@@ -72,15 +72,6 @@ class Nave extends Entidade{
             Jogo.gameOver = true;
         }
     }
-    desenhar(){
-        ctx.drawImage(
-            this.imagem,
-            this.x,
-            this.y,
-            this.largura,
-            this.altura,
-        )
-    }
 }
 
 class Alien extends Entidade{
@@ -92,14 +83,42 @@ class Alien extends Entidade{
     }
     atualizar(){
         this.y += this.#velocidade_y
-        if(this.y > 350){
-            let nova_posicao = Math.random() * 100
+        if(this.vivo == false){
+            //adicionar função que deleta ele; botar isso pra funcionar com array
         }
+    }
+    colisaoTiro(){
+        if (
+            //se o tiro colidir com o alien
+        ) {
+            alens.vivo = false; // Alien é "eliminado"
+            piu.this.ativo = false; // Tiro deixa de existir
+            pontuacao += 10; // Incrementa pontuação
+        }
+    }
+    desenhar(){
+        ctx.drawImage(
+            this.cor = 'green',
+            this.x,
+            this.y,
+            this.largura,
+            this.altura,
+        )
     }
 }
 
 class Tiro extends Entidade{
-
+    constructor(x, y, largura, altura, cor) {
+        super(x, y, largura, altura, cor);
+        this.velocidade_y = -10; // Tiro vai subir
+        this.ativo = true; // Controla se o tiro está ativo
+    }
+    atualizar() {
+        this.y += this.velocidade_y;
+        if (this.y < 0) {
+            this.ativo = false; // deleta o tiro quando ele chegar no topo da tela
+        }
+    }
 }
 
 class Jogo{
@@ -123,5 +142,6 @@ class Jogo{
 
 const personagi = new Nave(375, 345, 50, 50, 'white')
 const alens = [new Alien(375, 5, 50, 50, 'red')]
+const piu = [new Tiro(0, 0, 0, 0, 'white')]
 const jogo = new Jogo()
 jogo.loop()
